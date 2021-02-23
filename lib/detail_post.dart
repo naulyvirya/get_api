@@ -3,34 +3,55 @@ import 'package:flutter/material.dart';
 class DetailPost extends StatelessWidget {
   const DetailPost({
     Key key,
-    @required this.userId,
-    @required this.id,
-    @required this.title,
-    @required this.body,
+    @required this.name,
+    @required this.positif,
+    @required this.sembuh,
+    @required this.meninggal,
+    @required this.dirawat,
   }) : super(key: key);
 
-  final int userId;
-  final int id;
-  final String title;
-  final String body;
+  final String name;
+  final String positif;
+  final String sembuh;
+  final String meninggal;
+  final String dirawat;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.indigo,
       appBar: AppBar(
-        title: Text(
-            'User ID : ' + userId.toString() + 'dengan ID : ' + id.toString()),
+        title: Text(name),
       ),
       body: Container(
         child: Column(
           children: [
-            Text(title),
-            SizedBox(
-              height: 10,
+            Text(
+              'Jumlah Positif : ' + positif,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             Text(
-              body,
+              'Jumlah Sembuh : ' + sembuh,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Jumlah Meninggal : ' + meninggal,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Jumlah Dirawat : ' + dirawat,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,

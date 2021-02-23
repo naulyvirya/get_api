@@ -1,23 +1,26 @@
 import 'package:flutter/foundation.dart';
 
 class Post {
-  final int userId;
-  final int id;
-  final String title;
-  final String body;
+  final String name;
+  final String positif;
+  final String sembuh;
+  final String meninggal;
+  final String dirawat;
 
   Post(
-      {@required this.userId,
-      @required this.id,
-      @required this.title,
-      @required this.body});
+      {@required this.name,
+      @required this.positif,
+      @required this.sembuh,
+      @required this.meninggal,
+      @required this.dirawat});
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
-      userId: json['userId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-      body: json['body'] as String,
+      name: json['name'] as String,
+      positif: json['positif'] as String,
+      sembuh: json['sembuh'] as String,
+      meninggal: json['meninggal'] as String,
+      dirawat: json['dirawat'] as String,
     );
   }
 }

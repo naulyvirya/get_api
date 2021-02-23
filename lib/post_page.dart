@@ -35,7 +35,7 @@ class PostPage extends StatelessWidget {
                           children: [
                             Container(
                               child: Text(
-                                dataPost[index].title,
+                                dataPost[index].name,
                                 maxLines: 2,
                                 softWrap: true,
                                 overflow: TextOverflow.ellipsis,
@@ -50,10 +50,11 @@ class PostPage extends StatelessWidget {
                                     Navigator.of(context)
                                         .push(MaterialPageRoute(
                                       builder: (context) => DetailPost(
-                                        id: dataPost[index].id,
-                                        userId: dataPost[index].userId,
-                                        title: dataPost[index].title,
-                                        body: dataPost[index].body,
+                                        name: dataPost[index].name,
+                                        positif: dataPost[index].positif,
+                                        sembuh: dataPost[index].sembuh,
+                                        meninggal: dataPost[index].meninggal,
+                                        dirawat: dataPost[index].dirawat,
                                       ),
                                     ));
                                   },
@@ -62,7 +63,7 @@ class PostPage extends StatelessWidget {
                                     child: Container(
                                       width: 80,
                                       height: 30,
-                                      color: Colors.yellow,
+                                      color: Colors.green,
                                       child: Center(
                                         child: Text('Lihat Detail'),
                                       ),
